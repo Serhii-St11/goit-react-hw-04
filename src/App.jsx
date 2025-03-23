@@ -7,7 +7,6 @@ import LoadMoreBtn from "./components/loadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import toast, { Toaster } from "react-hot-toast";
 
-
 function App() {
   const [query, setQuery] = useState("");
   const [images, setImages] = useState([]);
@@ -29,7 +28,11 @@ function App() {
       );
       const data = await response.json();
 
-      setImages((prevImages) => [...prevImages, ...data.results]);
+      if (page === 1) {
+        setImages(data.results);
+      } else {
+        setImages((prevImages) => [...prevImages, ...data.results]);
+      }
     } catch (err) {
       setError("Error loading images");
     } finally {
@@ -46,10 +49,10 @@ function App() {
   };
 
   const openModal = (image) => {
-     if (!isModalOpen) {
-       setSelectedImage(image);
-       setIsModalOpen(true);
-     }
+    if (!isModalOpen) {
+      setSelectedImage(image);
+      setIsModalOpen(true);
+    }
   };
 
   const closeModal = () => {
