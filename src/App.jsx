@@ -2,10 +2,11 @@ import { useState } from "react";
 import ImageGallery from "./components/imageGallery/ImageGallery";
 import SearchBar from "./components/searchBar/SearchBar";
 import Loader from "./components/loader/Loader";
-import ErrorMessage from "./components/ErorMessage/ErorMessage";
+import ErrorMessage from "./components/errorMessage/ErrorMessage";
 import LoadMoreBtn from "./components/loadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
 import toast, { Toaster } from "react-hot-toast";
+
 
 function App() {
   const [query, setQuery] = useState("");
@@ -45,8 +46,10 @@ function App() {
   };
 
   const openModal = (image) => {
-    setSelectedImage(image);
-    setIsModalOpen(true);
+     if (!isModalOpen) {
+       setSelectedImage(image);
+       setIsModalOpen(true);
+     }
   };
 
   const closeModal = () => {

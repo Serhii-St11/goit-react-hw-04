@@ -15,7 +15,7 @@ export default function ImageModal({ isOpen, image, onClose }) {
       contentLabel="Image Modal"
       style={{
         overlay: {
-          backgroundColor: "rgba(0, 0, 0, 0.7)",
+          backgroundColor: "rgba(4, 4, 4, 0.86)",
         },
         content: {
           maxWidth: "1200px",
@@ -24,7 +24,8 @@ export default function ImageModal({ isOpen, image, onClose }) {
           padding: "5px",
           borderRadius: "10px",
           textAlign: "center",
-          backgroundColor: "white",
+          backgroundColor: "rgba(0, 0, 0, 0.87)",
+          color: "white",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",

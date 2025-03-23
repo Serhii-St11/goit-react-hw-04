@@ -1,6 +1,6 @@
 .img {
-  width: 1150px;
-  height: 550px;
+  width: 800px;
+  height: 600px;
   border-radius: 8px;
   object-fit: contain;
 }
@@ -8,7 +8,7 @@
 .text {
   margin-top: 10px;
   font-size: 16px;
-  color: #333;
+  color: #f1f6f6;
 }
 
 .closeButton {
